@@ -1,0 +1,163 @@
+:root {
+    --bg-color: #0f172a;
+    --surface-color: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --primary: #38bdf8;
+    --primary-hover: #0284c7;
+    --danger: #ef4444;
+    --success: #10b981;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    padding: 14px 24px;
+    background-color: var(--surface-color);
+    border-bottom: 1px solid #334155;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+nav a:hover, nav a[aria-current="page"] {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+
+header {
+    width: 100%;
+    padding: 30px 20px;
+    background-color: var(--surface-color);
+    text-align: center;
+    border-bottom: 2px solid var(--primary);
+    box-sizing: border-box;
+}
+
+header h1 { margin: 0; font-size: 28px; color: var(--primary); }
+header p { color: var(--text-muted); margin-top: 8px; }
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+/* Gaya Grid Produk untuk index.html */
+.status-text {
+    font-size: 16px;
+    text-align: center;
+    padding: 20px;
+    color: var(--primary);
+    background: var(--surface-color);
+    border-radius: 8px;
+}
+
+.status-error { color: var(--danger); }
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--surface-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #334155;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    background-color: #fff;
+}
+
+.card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-body h3 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.card-price {
+    margin-top: auto;
+    font-size: 18px;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.search-container {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+#searchInput {
+    width: 100%;
+    max-width: 600px;
+    padding: 14px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    background-color: var(--surface-color);
+    color: var(--text-main);
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-family: var(--font-family);
+}
+
+#searchInput:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+}
+
+.empty-message {
+    text-align: center;
+    grid-column: 1 / -1;
+    color: var(--text-muted);
+    font-size: 16px;
+    padding: 40px 0;
+}
